@@ -1,0 +1,35 @@
+{
+	"name": "RunningSSISPackageFrom_ADF",
+	"properties": {
+		"activities": [
+			{
+				"name": "ExecuteSSISpackage",
+				"type": "ExecuteSSISPackage",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"packageLocation": {
+						"packagePath": "SSIS_Rajesh_Demo/FirstDemo_Azure/DeployToAzure.dtsx",
+						"type": "SSISDB"
+					},
+					"environmentPath": null,
+					"connectVia": {
+						"referenceName": "AzureSSISIR",
+						"type": "IntegrationRuntimeReference"
+					},
+					"loggingLevel": "Basic"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-11-18T07:00:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
